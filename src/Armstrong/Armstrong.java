@@ -1,3 +1,9 @@
+
+
+
+
+package Armstrong;
+
 public class Armstrong {
     public static void main(String[] args) {
         final int BASE_10 = 10;

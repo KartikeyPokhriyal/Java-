@@ -1,25 +1,28 @@
+package Geometry;
 
+import com.sun.corba.se.impl.oa.poa.POAImpl;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
 public class Line {
+
     Point startPoint;
     Point endPoint;
 
+    public Line( int x1, int y1, int x2, int y2) {
 
+        startPoint = new Point(x1, y1);
+        endPoint = new Point(x2,y2);
 
-    public Line( Point startPoint, Point endPoint) {
-
-        this.startPoint = startPoint;
-        this.endPoint = endPoint;
     }
+
 
     public double getLength() {
 
         return sqrt(
-            pow(endPoint.getX() - startPoint.getX(), 2) +
-            pow(endPoint.getY() - startPoint.getY(), 2)
+            pow(endPoint.get_X_Values() - startPoint.get_X_Values(), 2) +
+            pow(endPoint.get_Y_Values() - startPoint.get_Y_Values(), 2)
         );
     }
 
