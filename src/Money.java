@@ -1,12 +1,13 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Money implements Comparable{
-    private double value;
+public class Money implements Comparable {
+    private int value;
     private String currency;
 
-    public Money(double value, String currency) {
+    public Money(int value, String currency) {
         this.value = value;
         this.currency = currency;
     }
@@ -15,13 +16,21 @@ public class Money implements Comparable{
 
     }
 
-    public double getValue() {
-        return value;
+    public int getLength() throws MoneyException {
+        value = 10;
+        try {
+            System.out.println(value / 0);
+            return currency.length();
+        } catch (NullPointerException e) {
+            //System.out.println(e.fillInStackTrace());
+            throw new MoneyException();
+        } catch (ArithmeticException e) {
+            //System.out.println(e.fillInStackTrace());
+            throw new MoneyException();
+        }
     }
 
-    public String getCurrency() {
-        return currency;
-    }
+
 
     @Override
     public boolean equals(Object o) {

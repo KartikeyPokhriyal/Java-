@@ -10,7 +10,7 @@ public class MoneyTest {
 
         Money rupee3 = new Money();
 
-        System.out.println(rupee3.getCurrency().length());
+//        System.out.println(rupee3.getCurrency().length());
         //rupee3.getValue();
         System.out.println(rupee.equals(rupee1));
 
@@ -25,6 +25,12 @@ public class MoneyTest {
 
         System.out.println((list1.equals(list2)));
 
+       try {
+           System.out.println(rupee3.getLength());
+       }
 
+       catch(MoneyException e) {
+           System.out.println(e.toString());
+       }
     }
 }
